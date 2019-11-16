@@ -1,6 +1,7 @@
 from pynchrotron import synchrotron_kernel
 from pynchrotron.synchrotron_kernel import cheb_eval
-
+from hypothesis import given
+import hypothesis.strategies as st
 
 import numpy as np
 
@@ -15,29 +16,9 @@ def test_cheb():
     np.testing.assert_almost_equal(val, -0.97895)
     
 
-
-
-def test_synchrotron_kernel():
-
-
-    val = 1E-11
-
-    synchrotron_kernel(val)
-
     
-    val = 1E-5
 
-    synchrotron_kernel(val)
-
-    val = 1E-1
-
-    synchrotron_kernel(val)
-
-
-    val = 1E2
-
-    synchrotron_kernel(val)
-
-    val = 1E10
+@given(st.floats(min_value=0) )
+def test_synchrotron_kernel(val):
 
     synchrotron_kernel(val)
