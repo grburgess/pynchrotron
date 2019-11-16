@@ -1,0 +1,15 @@
+language: python
+python:
+  # We don't actually use the Travis Python, but this keeps it organized.
+  - "2.7"
+  - "3.5"
+  - "3.6"
+install:
+  - pip install --upgrade numpy ipython  coverage pytest pytest-cov numba astropy
+  - python setup.py install
+env:
+  NUMBA_DISABLE_JIT=1
+
+script:
+  - python -m pytest -vv --cov=pynchrotron/
+#  - codecov --token=2adee64a-60b0-4c7e-b94c-512ea2b8e794
