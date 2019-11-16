@@ -5,7 +5,7 @@ python:
   # - "3.5"
   # - "3.6"
 install:
-  - pip install numpy ipython coverage pytest pytest-cov numba astropy==2.0.16 astromodels
+  - pip install numpy ipython coverage pytest pytest-cov numba astropy==2.0.16 astromodels codecov
   - python setup.py install
 env:
   NUMBA_DISABLE_JIT=1
