@@ -9,7 +9,7 @@ from shutil import rmtree
 
 # Package meta-data.
 NAME = "pynchrotron"
-DESCRIPTION = "A population synthesis code for GRB light curves"
+DESCRIPTION = "computes synchrotron from cooling electrons"
 URL = "https://github.com/grburgess/pynchrotron"
 EMAIL = "jmichaelburgess@gmail.com"
 AUTHOR = "J. Michael Burgess"
@@ -22,6 +22,7 @@ REQUIRED = [
     "ipython",
     "astropy",
     "numba",
+    "astromodels"
 ]
 
 # What packages are optional?
