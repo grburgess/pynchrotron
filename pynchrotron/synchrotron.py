@@ -1,7 +1,7 @@
 import numba as nb
 import numpy as np
 
-from synchrotron_models.synchrotron_kernel import (
+from pynchrotron.synchrotron_kernel import (
     synchrotron_kernel,
     compute_synchtron_matrix,
 )
@@ -21,9 +21,7 @@ def cool_and_radiate(
     n_grid_points,
     steps,
 ):
-    
 
-    
     gamma = np.zeros(n_grid_points)
     gamma2 = np.zeros(n_grid_points)
     fgamma = np.zeros(n_grid_points)
