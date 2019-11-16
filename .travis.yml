@@ -12,4 +12,4 @@ env:
 
 script:
   - python -m pytest -vv --cov=pynchrotron/
-#  - codecov --token=2adee64a-60b0-4c7e-b94c-512ea2b8e794
+  - codecov --token=95a59626-4d5a-47a2-9263-4fa3a919a1bd
