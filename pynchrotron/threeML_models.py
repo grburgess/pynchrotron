@@ -3,7 +3,7 @@ import astropy.units as u
 import astropy.constants as constants
 from astromodels import Function1D, FunctionMeta
 
-from synchrotron_models.synchrotron import cool_and_radiate
+from pynchrotron.synchrotron import cool_and_radiate
 
 __author__ = "grburgess"
 
