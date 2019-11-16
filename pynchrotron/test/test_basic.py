@@ -18,7 +18,9 @@ def test_cheb():
 
     
 
-@given(st.floats(min_value=0) )
+@given(st.floats(min_value=1E-100) )
 def test_synchrotron_kernel(val):
 
     synchrotron_kernel(val)
+
+

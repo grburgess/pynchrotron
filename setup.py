@@ -22,7 +22,9 @@ REQUIRED = [
     "ipython",
     "astropy",
     "numba",
-    "astromodels"
+    "astromodels",
+    "hypothesis"
+    
 ]
 
 # What packages are optional?
