@@ -127,7 +127,7 @@ class SynchrotronNumerical(Function1D):
         # cool and find out the number of
         # steps that will require
 
-        steps = np.round(ratio)
+        steps = np.int32(np.round(ratio))
 
         norm = bulk_gamma * B_ * 3.7797251e-22
         erg2keV = 6.242e8
