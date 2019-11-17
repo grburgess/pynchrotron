@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/grburgess/pynchrotron.svg?branch=master)](https://travis-ci.org/grburgess/pynchrotron)
+[![Build Status](https://github.com/grburgess/pynchrotron/workflows/CI/badge.svg)]()
 [![codecov](https://codecov.io/gh/grburgess/pynchrotron/branch/master/graph/badge.svg)](https://codecov.io/gh/grburgess/pynchrotron)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3544259.svg)](https://doi.org/10.5281/zenodo.3544259)
 
