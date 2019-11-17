@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install numba hypothesis numpy==1.16.5 coverage pytest pytest-cov astropy==2.0.16 astromodels codecov 
+        pip install numpy==1.16.5 numba hypothesis coverage pytest pytest-cov astropy==2.0.16 astromodels codecov 
         
     - name: Lint with flake8
       run: |
