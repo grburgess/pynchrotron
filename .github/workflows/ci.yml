@@ -8,15 +8,16 @@ jobs:
     env:
        NUMBA_DISABLE_JIT: 1
     
-    runs-on: macos-latest
+
     strategy:
       max-parallel: 5
       matrix:
         python-version: [2.7]
+        runs-on: [macos-latest, ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python ${{ matrix.python-version }}, ${{matrix.runs-on}}
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
