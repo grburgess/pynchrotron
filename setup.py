@@ -19,7 +19,6 @@ VERSION = None
 REQUIRED = [
     "numpy",
     "scipy",
-    "ipython",
     "astropy",
     "numba",
     "astromodels",
