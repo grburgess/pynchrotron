@@ -26,7 +26,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip2 install numpy==1.16.5 scipy
-        pip2 install llvmlite pytest pytest-cov codecov
+        pip2 install llvmlite 
         #pip2 install numba hypothesis  astropy==2.0.16 astromodels codecov 
         pip2 install -r requirements.txt
     # - name: Lint with flake8
@@ -37,6 +37,7 @@ jobs:
     #     # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
     #     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
-      run: |        
+      run: |
+        pip2 install pytest pytest-cov codecov
         python -m pytest -vv --cov=pynchrotron/
         codecov --token=95a59626-4d5a-47a2-9263-4fa3a919a1bd
