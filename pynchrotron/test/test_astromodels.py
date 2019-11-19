@@ -23,3 +23,6 @@ def test_astromodels_model_with_units():
     model = Model(PointSource('test',0,0,spectral_shape=x))
 
     model.get_point_source_fluxes(0,ene)
+
+
+    model.get_point_source_fluxes(0, 1*u.keV)
