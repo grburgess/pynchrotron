@@ -190,9 +190,27 @@ def synchrotron_kernel(x):
 def compute_synchtron_matrix(
     energy, gamma2, B, bulk_lorentz_factor, n_photon_energies, n_grid_points
 ):
+    """
+    compute the evaluation of the synchrotron kernel
+    for each photon energy and electron bin
 
+    :param energy: 
+    :param gamma2: 
+    :param B: 
+    :param bulk_lorentz_factor: 
+    :param n_photon_energies: 
+    :param n_grid_points: 
+    :returns: 
+    :rtype: 
+
+    """
+
+    # allocate the matrix
+    
     out_matrix = np.zeros((n_photon_energies, n_grid_points))
 
+    # compute the synchrotron characteristic energy
+    
     ec = B * bulk_lorentz_factor * 1.7365145e-11
 
     for i in range(n_photon_energies):
@@ -205,6 +223,8 @@ def compute_synchtron_matrix(
 
             arg2 = arg1 / gamma2[j]
 
+            # fill the matrix
+            
             out_matrix[i, j] = synchrotron_kernel(arg2)
 
     return out_matrix
