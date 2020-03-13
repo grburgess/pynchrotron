@@ -7,7 +7,7 @@ python:
 - '3.7'
 
 install:
-- pip install --upgrade hypothesis numpy ipython coverage pytest pytest-cov
+- pip install --upgrade hypothesis coverage pytest pytest-cov
 - python setup.py install
 env: NUMBA_DISABLE_JIT=1
 script:
