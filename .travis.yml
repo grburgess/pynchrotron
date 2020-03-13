@@ -1,20 +1,25 @@
 language: python
-
 os:
-  - linux
-  
-
+- linux
 python:
-  # We don't actually use the Travis Python, but this keeps it organized.
-  - "2.7"
-  # - "3.5"
-  # - "3.6"
-install:
-  - pip install --upgrade hypothesis numpy ipython coverage pytest pytest-cov numba astropy==2.0.16 astromodels codecov 
-  - python setup.py install
-env:
-  NUMBA_DISABLE_JIT=1
+- '2.7'
+- '3.6'
+- '3.7'
 
+install:
+- pip install --upgrade hypothesis numpy ipython coverage pytest pytest-cov
+- python setup.py install
+env: NUMBA_DISABLE_JIT=1
 script:
-  - python -m pytest -vv --cov=pynchrotron/
-  - codecov --token=95a59626-4d5a-47a2-9263-4fa3a919a1bd
+- python -m pytest -vv --cov=pynchrotron/
+- codecov --token=95a59626-4d5a-47a2-9263-4fa3a919a1bd
+deploy:
+  provider: pypi
+  user: "__token__"
+  password:
+    secure: XdF3F7XZ7D8/L2anyYe8j8Sf6YZdHzzsYx6KCVib1Fj0ewKNCIRaHLCXRP51UQP3ts/G14+zp3MJUxy1bi90eX9kC/Bqif9zoPRxCt77qw7E3JZ1uV0/J2++fRmSkyCuQYW42Xs+pHcbimFAQk2On5/thc7WlcR9YsmwUO7b9XwuhjsT7G5uUWc8jFPQw8LdDIU4PwpSSspC+y/TmdSiHVvHz6BCAy7hOSkX3H2Cg3gDKsD95vH/cBGQ2GilnXpELktMugruhw6NjnfwwWyhe4N2FdlTm2ABpE6pLWXrUaKy5WTM2Xy9eNDIsabyZauGPQf9IFwiqRgVMiSEIOMannFR7G6eNCexBpbK1MC3b3DPru13Rnk+nOV/ajU9LNWMWO/U6A3mDvyFJkrPIHdc1cvshTypHqGetNTy4AU3LpcUG5ktUC4QW6+PGimuTEpbTSSxXybBZwlynp6PBRa9yZbrY5qy5lK2z7BjGfkMz60WqaeZa1fJ3JuujKtQSC8BA47eQLqoOlZF1jTaTnCKJWgQuwCUfzDcZWmy30OWR9W/mR8m368hHSV/rskIZnK00zR5dp3E8BOVO78xTBVb4vS8AtybibpykzvowtBpaXPNyVhA7m76jS90JYTXZ4Ql1o/DQCSdnvbvAn7wChLJDYGG01KYZyEm6KtcPKDn+Xk=
+  on:
+    tags: true
+  distributions: "sdist bdist_wheel" # Your distributions here
+  skip_existing: true
+
