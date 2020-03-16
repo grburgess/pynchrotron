@@ -8,7 +8,7 @@ from pynchrotron.synchrotron import cool_and_radiate
 __author__ = "grburgess"
 
 
-class SynchrotronNumerical(Function1D):
+class SynchrotronNumerical(Function1D, metaclass=FunctionMeta):
     r"""
     description :
         Synchrotron emission from cooling electrions
@@ -56,11 +56,10 @@ class SynchrotronNumerical(Function1D):
             initial value : 1
             min : 1.
             fix: yes
-      
- 
+       
     """
 
-    __metaclass__ = FunctionMeta
+#    __metaclass__ = FunctionMeta
 
     def _set_units(self, x_unit, y_unit):
 
