@@ -8,7 +8,7 @@ python:
 - '3.8'
 
 install:
-- pip install --upgrade hypothesis numpy pandas coverage pytest pytest-cov
+- pip install --upgrade hypothesis numpy pandas coverage pytest pytest-cov codecov
 - pip install git+https://github.com/threeML/astromodels
 - python setup.py install
 env: NUMBA_DISABLE_JIT=1
