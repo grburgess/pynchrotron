@@ -1,0 +1,3 @@
+ignore:
+  - "pynchrotron/tests"
+  - "pynchrotron/_version.py"
