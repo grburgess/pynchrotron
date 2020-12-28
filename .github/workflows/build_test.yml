@@ -20,6 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install astropy
         pip install --upgrade numpy numba threeml flake8 coverage pytest pytest-cov cython codecov
         python setup.py install
     - name: Lint with flake8
