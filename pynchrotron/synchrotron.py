@@ -92,7 +92,7 @@ def cool_and_radiate(
     # now compute the cooling and synchrotron emission
         
     fgammatp1 = np.zeros(n_grid_points)
-
+    val = np.zeros(n_grid_points-1)
     for _ in range(0, steps + 1):
 
 
@@ -121,11 +121,9 @@ def cool_and_radiate(
         fgamma[0] = fgammatp1[0]
         fgamma[-1] = fgammatp1[-1]
 
-        # synchrotron emission
 
-        # now loop through the photon energies and compute the synchrotron
-        # cooling with a power law integration
+        val += fgamma[1:]*(gamma[1:]-gamma[:-1])
 
-        emission += np.dot(synchrotron_matrix[:,1:], fgamma[1:]*(gamma[1:]-gamma[:-1]))/(2.0*energy)
+    emission = np.dot(synchrotron_matrix[:,1:], val)/(2.0*energy)
 
     return emission
