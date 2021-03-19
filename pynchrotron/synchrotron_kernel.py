@@ -207,7 +207,7 @@ def compute_synchtron_matrix(
 
     # allocate the matrix
     
-    out_matrix = np.zeros((n_photon_energies, n_grid_points))
+    out_matrix = np.zeros((n_photon_energies, n_grid_points),)
 
     # compute the synchrotron characteristic energy
     
